@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MintDash</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="preloader" class="d-flex justify-content-center align-items-center">
+    <div class="spinner-border text-info" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-lg sticky-top animated-navbar">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">XRii 3D Dashboard</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#overview">Overview</a></li>
+          <li class="nav-item"><a class="nav-link" href="#finance">Finance</a></li>
+          <li class="nav-item"><a class="nav-link" href="#analytics">Analytics</a></li>
+          <li class="nav-item"><a class="nav-link" href="#activity">Activity</a></li>
+          <li class="nav-item"><a class="nav-link" href="#reports">Reports</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Sidebar & Main -->
+  <div class="container-fluid">
+    <div class="row">
+      <aside class="col-md-2 sidebar custom-sidebar">
+        <h4 class="text-center mb-4">MintDash</h4>
+        <ul class="nav flex-column">
+          <li class="nav-item"><a href="#overview" class="nav-link active">📊 Dashboard</a></li>
+          <li class="nav-item"><a href="#cards" class="nav-link">💳 My Cards</a></li>
+          <li class="nav-item"><a href="#stats" class="nav-link">📈 Statistic</a></li>
+          <li class="nav-item"><a href="#calendar" class="nav-link">🗓️ Calendar</a></li>
+          <li class="nav-item"><a href="#notifications" class="nav-link">🔔 Notifications</a></li>
+          <li class="nav-item"><a href="#settings" class="nav-link">⚙️ Settings</a></li>
+        </ul>
+      </aside>
+
+      <main class="col-md-10 p-4">
+        <section id="overview">
+          <div class="intro mb-4">
+            <h1 class="display-5 fw-bold gradient-text">Welcome back! 👋</h1>
+            <p class="text-muted">Here’s your complete system overview.</p>
+          </div>
+
+          <div class="row g-4">
+            <div class="col-md-3">
+              <div class="card shadow card-glow">
+                <div class="card-body">
+                  <h5 class="card-title">Total Income</h5>
+                  <h3>$632,000 <span class="text-success">↑ 23%</span></h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card shadow card-glow">
+                <div class="card-body">
+                  <h5 class="card-title">Total Outcome</h5>
+                  <h3>$280,000 <span class="text-danger">↓ 6.5%</span></h3>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="card shadow card-glow">
+                <div class="card-body d-flex justify-content-between align-items-center">
+                  <div>
+                    <h5>Card Balance</h5>
+                    <h4>$15,595.01</h4>
+                    <p class="text-muted">5282 3456 7890 1289</p>
+                  </div>
+                  <button class="btn btn-outline-light">Manage Cards</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="analytics" class="mt-5">
+          <h2 class="mb-3 gradient-text">Advanced Analytics</h2>
+          <div class="row g-4">
+            <div class="col-md-8">
+              <div class="card shadow-lg p-3">
+                <h5>Monthly Trends</h5>
+                <canvas id="barChart" height="300"></canvas>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card shadow-lg p-3">
+                <h5>Activity</h5>
+                <canvas id="doughnutChart" height="300"></canvas>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="reports" class="mt-5">
+          <h2 class="mb-3 gradient-text">Financial Reports</h2>
+          <div class="card shadow-lg p-3">
+            <div class="table-responsive">
+              <table class="table table-dark table-striped">
+                <thead>
+                  <tr>
+                    <th>Month</th>
+                    <th>Income</th>
+                    <th>Expense</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>January</td><td>$12,000</td><td>$8,000</td><td><span class="badge bg-success">Profit</span></td></tr>
+                  <tr><td>February</td><td>$15,000</td><td>$7,000</td><td><span class="badge bg-success">Profit</span></td></tr>
+                  <tr><td>March</td><td>$17,000</td><td>$9,500</td><td><span class="badge bg-success">Profit</span></td></tr>
+                  <tr><td>April</td><td>$14,000</td><td>$8,500</td><td><span class="badge bg-success">Profit</span></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </div>
+
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+  <script>
+    window.addEventListener("load", () => {
+      const preloader = document.getElementById("preloader");
+      preloader.style.display = "none";
+    });
+  </script>
+</body>
+</html>
